@@ -1,0 +1,25 @@
+/* Layout.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.layout-container {
+  @apply min-h-screen bg-gray-100;
+}
+
+.layout-content {
+  @apply p-6;
+}
+
+/* NavigationBar.css */
+.navbar {
+  @apply h-16 bg-blue-600 shadow-md;
+}
+
+.navbar-content {
+  @apply flex items-center justify-between h-full px-6;
+}
+
+.navbar-title {
+  @apply text-white font-semibold text-base;
+}

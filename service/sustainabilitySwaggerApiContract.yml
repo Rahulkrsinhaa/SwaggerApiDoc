@@ -1,0 +1,143 @@
+openapi: 3.0.0
+info:
+  title: Sustainability
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8081
+
+paths:
+  /carbon/item:
+    get:
+      summary: Add a new carbon emitter item
+      operationId: addItem
+      responses:
+        '200':
+          description: Add a new carbon emitter item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarbonEmitterItemResponse'
+
+    post:
+      summary: Create a new carbon emitter item
+      operationId: createItem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarbonEmitterItemRequest'
+            example:
+              Scope: "Scope1"
+              Category: "CategoryA"
+              Type: "TypeX"
+              Name: "string"
+      responses:
+        '201':
+          description: Created carbon emitter item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarbonEmitterItemResponse'
+        'default':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /carbon/item/{id}:
+    put:
+      summary: Update an existing carbon emitter item by ID
+      operationId: updateItemById
+      parameters:
+        - name: id
+          in: path
+          description: ID of the carbon emitter item to update
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarbonEmitterItemRequest'
+      responses:
+        '200':
+          description: Updated carbon emitter item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarbonEmitterItemResponse'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        'default':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    ScopeEnum:
+      type: string
+      enum:
+        - Scope1
+        - Scope2
+        - Scope3
+
+    CategoryEnum:
+      type: string
+      enum:
+        - CategoryA
+        - CategoryB
+        - CategoryC
+
+    TypeEnum:
+      type: string
+      enum:
+        - TypeX
+        - TypeY
+        - TypeZ
+
+    CarbonEmitterItemRequest:
+      type: object
+      properties:
+        Scope:
+          $ref: '#/components/schemas/ScopeEnum'
+        Category:
+          $ref: '#/components/schemas/CategoryEnum'
+        Type:
+          $ref: '#/components/schemas/TypeEnum'
+        Name:
+          type: string
+      required:
+        - Scope
+        - Category
+        - Type
+        - Name
+
+    CarbonEmitterItemResponse:
+      allOf:
+        - $ref: '#/components/schemas/CarbonEmitterItemRequest'
+        - type: object
+          properties:
+            id:
+              type: string
+              example: "12345"
+          required:
+            - id
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          example: "An error occurred"

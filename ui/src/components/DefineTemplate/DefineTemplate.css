@@ -1,0 +1,14 @@
+.define-container {
+  @apply bg-white p-3 rounded-lg shadow-lg;
+}
+.define-title {
+  @apply text-lg font-bold text-blue-600 mb-2 text-left;
+}
+
+.define-text {
+  @apply text-gray-600;
+}
+
+.define-main {
+  @apply bg-white rounded-lg shadow-lg p-4;
+}

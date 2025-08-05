@@ -1,0 +1,130 @@
+.container{
+    background-color: white;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.panel {
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  flex: 1 1 50%;
+   max-width: 100%;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.dropdown {
+  min-width: 180px;
+  flex: 1;
+}
+
+.dropdown-row {
+  display: flex;
+  gap: 2em;             
+  margin-bottom: 1rem;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;     
+ justify-content: flex-center; 
+
+}
+
+.dropdown-row > * {
+  flex: 1 1 500px;  
+  min-width: 200px;  
+}
+
+.panel h2 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  background-color: #2563eb; 
+  color: white;
+  padding: 1rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.defined-item-table {
+  margin-top: 1.5rem;
+}
+
+.table-title {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.table-container {
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+}
+
+.table-scroll {
+  max-height: 16rem; 
+  overflow-y: auto;
+}
+
+.table-header {
+  background-color: #bfdbfe; 
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.table-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-top: 1px solid #ccc;
+  gap: 2.5rem;
+  margin-right: 1.5rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #3b82f6; 
+}
+
+.btn-primary:hover {
+  background-color: #2563eb; 
+}
+
+.btn-secondary {
+  background-color: #3b82f6;
+}
+
+.btn-secondary:hover {
+  background-color: #60a5fa;
+}
+
+.btn-danger {
+  background-color: #dc2626; 
+}
+
+.btn-danger:hover {
+  background-color: rgb(110, 16, 16)
+}

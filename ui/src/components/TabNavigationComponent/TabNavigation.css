@@ -1,0 +1,20 @@
+/* TabNavigation.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tab-container {
+  @apply flex gap-1 mb-6;
+}
+
+.tab-button {
+  @apply px-4 py-2 text-sm font-medium rounded-t-lg bg-gray-200 text-gray-700 no-underline transition-colors duration-200;
+}
+
+.tab-button:hover {
+  @apply bg-gray-300;
+}
+
+.tab-button.active {
+  @apply bg-blue-600 text-white;
+}

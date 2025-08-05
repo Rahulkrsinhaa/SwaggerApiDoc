@@ -1,0 +1,41 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Frontend (UI) dependencies
+ui/node_modules/
+ui/.pnp
+ui/.pnp.js
+ui/coverage/
+ui/build/
+ui/.env.local
+ui/.env.development.local
+ui/.env.test.local
+ui/.env.production.local
+ui/npm-debug.log*
+ui/yarn-debug.log*
+ui/yarn-error.log*
+
+# Backend (Spring Boot)
+service/target/
+service/.mvn/
+service/mvnw
+service/mvnw.cmd
+service/*.jar
+service/*.war
+service/.idea/
+service/*.iml
+service/.settings/
+service/.project
+service/.classpath
+
+# IDE files (global)
+.vscode/
+*.iml
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generic files
+Help.md
+HELP.md
